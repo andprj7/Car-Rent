@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.CarOnRent" parent="Base.Theme.CarOnRent" />
+    <style name="TEXT">
+        <item name="android:textColor">#000</item>
+    </style>
 </resources>

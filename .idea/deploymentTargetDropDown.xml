@@ -2,6 +2,7 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+<<<<<<< HEAD
       <entry key="Location">
         <State />
       </entry>
@@ -21,6 +22,11 @@
           <timeTargetWasSelectedWithDropDown value="2023-12-02T15:44:42.561959600Z" />
         </State>
       </entry>
+=======
+      <entry key="app">
+        <State />
+      </entry>
+>>>>>>> origin/master
     </value>
   </component>
 </project>

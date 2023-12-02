@@ -67,7 +67,6 @@
             android:drawablePadding="10dp"
             android:inputType="textPassword"
             android:drawableLeft="@drawable/otp"
-            android:drawableRight="visi"
             android:hint="ENTER A PASSWORD"
             android:textColor="#000000"/>
     </com.google.android.material.textfield.TextInputLayout>

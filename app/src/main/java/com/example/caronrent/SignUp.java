@@ -114,8 +114,8 @@ public class SignUp extends AppCompatActivity {
 
                     /*
 
-                        WRITE A CODE FOR UPLOAD AN IMAGE IN FIREBASE
-
+                       FIRST WRITE A CODE FOR UPLOAD AN IMAGE IN FIREBASE
+                       AFTER REMOVE THE COMMENT
                         //uploadToFirebase(imageUri);
 
                      */

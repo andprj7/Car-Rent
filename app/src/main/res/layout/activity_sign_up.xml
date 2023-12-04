@@ -216,7 +216,8 @@
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/text7"
-            app:srcCompat="@drawable/baseline_document_scanner_24" />
+            app:srcCompat="@drawable/baseline_document_scanner_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Spinner
             android:id="@+id/spinner"

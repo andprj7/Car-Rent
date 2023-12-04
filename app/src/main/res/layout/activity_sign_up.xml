@@ -24,13 +24,13 @@
             app:srcCompat="@drawable/img" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtname"
+            android:id="@+id/text1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="374dp"
             android:layout_height="71dp"
             android:textColorHint="#909090"
             app:boxStrokeColor="#4CAF50"
-            app:layout_constraintBottom_toTopOf="@+id/txtmobile"
+            app:layout_constraintBottom_toTopOf="@+id/text3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +38,7 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/baseline_person_24"
@@ -48,7 +49,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtmobile"
+            android:id="@+id/text3"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="374dp"
             android:layout_height="71dp"
@@ -57,11 +58,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtname"
+            app:layout_constraintTop_toBottomOf="@+id/text1"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="258dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtmobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/baseline_call_24"
@@ -73,7 +75,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtEmail"
+            android:id="@+id/text4"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="374dp"
             android:layout_height="71dp"
@@ -82,23 +84,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtmobile"
+            app:layout_constraintTop_toBottomOf="@+id/text3"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="258dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/baseline_email_24"
                 android:drawablePadding="10dp"
                 android:hint="Enter E-Mail"
                 android:inputType="textEmailAddress"
-                android:maxLength="10"
+                android:maxLength="50"
                 android:textColor="#000000" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtPass"
+            android:id="@+id/text5"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="374dp"
             android:layout_height="71dp"
@@ -107,11 +110,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/text4"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="258dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtpass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/baseline_password_24"
@@ -123,7 +127,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtConPass"
+            android:id="@+id/text6"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="374dp"
             android:layout_height="71dp"
@@ -132,11 +136,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPass"
+            app:layout_constraintTop_toBottomOf="@+id/text5"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="258dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtconpass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/baseline_lock_24"
@@ -149,7 +154,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtDl"
+            android:id="@+id/text7"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="374dp"
             android:layout_height="71dp"
@@ -159,17 +164,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtConPass"
+            app:layout_constraintTop_toBottomOf="@+id/text6"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/baseline_drive_eta_24"
                 android:drawablePadding="10dp"
                 android:hint="Enter Driving Licence Number"
-                android:inputType="number"
-                android:maxLength="10"
+                android:inputType="text"
+                android:maxLength="15"
                 android:textColor="#000000" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -209,7 +215,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/txtDl"
+            app:layout_constraintTop_toBottomOf="@+id/text7"
             app:srcCompat="@drawable/baseline_document_scanner_24" />
 
         <Spinner
@@ -219,7 +225,7 @@
             android:layout_height="43dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toEndOf="@+id/txtDl"
+            app:layout_constraintEnd_toEndOf="@+id/text7"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <TextView
@@ -270,10 +276,10 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnregister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="Register"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -293,6 +299,5 @@
             app:layout_constraintVertical_bias="0.448" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </ScrollView>

@@ -123,6 +123,8 @@ public class SignUp extends AppCompatActivity {
                 }
             }
         });
+
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(SignUp.this, android.R.layout.simple_spinner_item, city);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -142,6 +144,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void registeruser(String txtName, String txtMobile, String txtEmail, String txtPass, String txtDll,String City,String txtGender) {
+
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
         auth.createUserWithEmailAndPassword(txtEmail, txtPass).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {

@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,6 +35,9 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUp extends AppCompatActivity {
     static final String TAG = "SignUp";
@@ -94,6 +98,7 @@ public class SignUp extends AppCompatActivity {
         });
 
         btnregister.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 int selectedGenderid = radiogender.getCheckedRadioButtonId();
@@ -105,9 +110,12 @@ public class SignUp extends AppCompatActivity {
                 String txtPass = txtpass.getText().toString();
                 String txtConPass = txtconpass.getText().toString();
                 String txtDll = txtdl.getText().toString();
-                String City=spinner.toString();
                 String txtGender;
-
+                String City=city[spinner.getSelectedItemPosition()];
+                String mobileregex = "[6-9][0-9]{9}";
+                Matcher mobilematcher;
+                Pattern mobilepattern = Pattern.compile(mobileregex);
+                mobilematcher = mobilepattern.matcher(txtMobile);
 
                 //UPLOAD AN IMAGE
                 if (imageUri != null){
@@ -138,16 +146,19 @@ public class SignUp extends AppCompatActivity {
                     Toast.makeText(SignUp.this, "Please Re-Enter Mobile Number", Toast.LENGTH_SHORT).show();
                     txtmobile.setError("Mobile no. should be 10 digits");
                     txtmobile.requestFocus();
+                } else if (!mobilematcher.find()) {
+                    Toast.makeText(SignUp.this, "Please Re-Enter Mobile Number", Toast.LENGTH_SHORT).show();
+                    txtmobile.setError("Mobile no. is not valid");
+                    txtmobile.requestFocus();
                 } else if (TextUtils.isEmpty(txtEmail)) {
                     Toast.makeText(SignUp.this, "Please Enter Email", Toast.LENGTH_SHORT).show();
                     txtemail.setError("Email is required");
                     txtemail.requestFocus();
-                }
-                //else if (!Patterns.EMAIL_ADDRESS.matcher(txtEmail).matches()) {
-//                    Toast.makeText(SignUp.this, "Please Re-Enter Email", Toast.LENGTH_SHORT).show();
-//                    txtemail.setError("Valid Email is required");
-//                    txtemail.requestFocus();}
-                else if (TextUtils.isEmpty(txtPass)) {
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(txtEmail).matches()) {
+                    Toast.makeText(SignUp.this, "Please Re-Enter Email", Toast.LENGTH_SHORT).show();
+                    txtemail.setError("Valid Email is required");
+                    txtemail.requestFocus();
+                } else if (TextUtils.isEmpty(txtPass)) {
                     Toast.makeText(SignUp.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
                     txtpass.setError("Password is required");
                     txtpass.requestFocus();
@@ -175,29 +186,28 @@ public class SignUp extends AppCompatActivity {
                     txtconpass.requestFocus();
                 } else {
                     txtGender = male.getText().toString();
-                    registeruser(txtName, txtMobile, txtEmail, txtPass, txtDll,City,txtGender);
+                    registeruser(txtName, txtMobile, txtEmail, txtPass, txtDll, City, txtGender);
                 }
             }
         });
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SignUp.this, android.R.layout.simple_spinner_item, city);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(SignUp.this, android.R.layout.simple_spinner_item, city);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        //spinner.setOnItemSelectedListener(this);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                String value =parent.getItemAtPosition(position).toString();
-//                Toast.makeText(SignUp.this, value, Toast.LENGTH_SHORT).show();
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
     }
 
-    private void registeruser(String txtName, String txtMobile, String txtEmail, String txtPass, String txtDll,String City,String txtGender) {
+    private void registeruser(String txtName, String txtMobile, String txtEmail, String
+            txtPass, String txtDll, String City, String txtGender) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
         auth.createUserWithEmailAndPassword(txtEmail, txtPass).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
@@ -206,7 +216,7 @@ public class SignUp extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     //Toast.makeText(SignUp.this, "User created successfully", Toast.LENGTH_SHORT).show();
                     FirebaseUser firebaseUser = auth.getCurrentUser();
-                    ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(txtName, txtMobile, txtEmail, txtDll, txtPass,City,txtGender);
+                    ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(txtName, txtMobile, txtEmail, txtDll, txtPass, City, txtGender);
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Registered Users");
                     reference.child(firebaseUser.getUid()).setValue(writeUserDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

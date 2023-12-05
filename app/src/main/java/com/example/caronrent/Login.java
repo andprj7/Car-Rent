@@ -116,6 +116,8 @@ public class Login extends AppCompatActivity {
 //                    Toast.makeText(Login.this, "Logged In", Toast.LENGTH_SHORT).show();
                     FirebaseUser firebaseUser = auth.getCurrentUser();
                     if (firebaseUser.isEmailVerified()) {
+                        Intent intent = new Intent(Login.this, Loc.class);
+                        startActivity(intent);
                         Toast.makeText(Login.this, "Logged In", Toast.LENGTH_SHORT).show();
 
                     } else {
@@ -163,12 +165,12 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (auth.getCurrentUser()!=null){
+        if (auth.getCurrentUser() != null) {
             Toast.makeText(this, "You are already logged in", Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(Login.this, Loc.class);
+            Intent intent = new Intent(Login.this, Loc.class);
             startActivity(intent);
             finish();
-        }else {
+        } else {
             Toast.makeText(this, "You can login now!", Toast.LENGTH_SHORT).show();
         }
     }

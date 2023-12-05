@@ -1,5 +1,8 @@
 package com.example.caronrent;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -8,11 +11,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,6 +46,8 @@ public class SignUp extends AppCompatActivity {
     RadioGroup radiogender;
     RadioButton male, female, other;
     Button btnregister;
+    Uri imageUri;
+    ImageView uploadImage;
     String[] city = {"Surat", "Vadodara", "Ahmedabad", "Rajkot", "Bhavnagar"};
 
     @Override
@@ -57,6 +67,35 @@ public class SignUp extends AppCompatActivity {
         radiogender.clearCheck();
         btnregister = findViewById(R.id.btnregister);
         spinner = findViewById(R.id.spinner);
+        uploadImage=findViewById(R.id.imageView3);
+
+        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK){
+                            Intent data = result.getData();
+                            imageUri = data.getData();
+                            uploadImage.setImageURI(imageUri);
+                        } else {
+                            Toast.makeText(SignUp.this, "No Image Selected", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+
+
+
+        );
+        uploadImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent photoPicker = new Intent();
+                photoPicker.setAction(Intent.ACTION_GET_CONTENT);
+                photoPicker.setType("image/*");
+                activityResultLauncher.launch(photoPicker);
+            }
+        });
 
         btnregister.setOnClickListener(new View.OnClickListener() {
 
@@ -77,6 +116,23 @@ public class SignUp extends AppCompatActivity {
                 Matcher mobilematcher;
                 Pattern mobilepattern = Pattern.compile(mobileregex);
                 mobilematcher = mobilepattern.matcher(txtMobile);
+
+                //UPLOAD AN IMAGE
+                if (imageUri != null){
+
+                    /*
+
+                       FIRST WRITE A CODE FOR UPLOAD AN IMAGE IN FIREBASE
+                       AFTER REMOVE THE COMMENT
+                        //uploadToFirebase(imageUri);
+
+                     */
+
+
+                } else  {
+                    Toast.makeText(SignUp.this, "Please select image", Toast.LENGTH_SHORT).show();
+                }
+
 
                 if (TextUtils.isEmpty(txtName)) {
                     Toast.makeText(SignUp.this, "Please Enter Name", Toast.LENGTH_SHORT).show();

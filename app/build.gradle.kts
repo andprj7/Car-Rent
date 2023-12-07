@@ -45,5 +45,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // This is for Image Slider
-    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    //implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
 }

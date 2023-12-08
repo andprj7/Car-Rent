@@ -1,6 +1,5 @@
 package com.example.caronrent;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -78,7 +77,6 @@ public class SignUp extends AppCompatActivity {
     RadioButton rdb_male, rdb_female, rdb_others;
 
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -332,9 +330,9 @@ public class SignUp extends AppCompatActivity {
             check = false;
         }
         else if (!Patterns.EMAIL_ADDRESS.matcher(txtEmail).matches()) {
-            Toast.makeText(SignUp.this, "Please Re-Enter Email", Toast.LENGTH_SHORT).show();
-            txtemail.setError("Valid Email is required");
-            txtemail.requestFocus();}
+                    Toast.makeText(SignUp.this, "Please Re-Enter Email", Toast.LENGTH_SHORT).show();
+                    txtemail.setError("Valid Email is required");
+                    txtemail.requestFocus();}
         else if (TextUtils.isEmpty(txtPass)) {
             Toast.makeText(SignUp.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
             txtpass.setError("Password is required");
@@ -377,3 +375,5 @@ public class SignUp extends AppCompatActivity {
 
     }
 }
+
+

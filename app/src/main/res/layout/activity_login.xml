@@ -39,9 +39,9 @@
             android:id="@+id/txt_email_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/phone"
+            android:drawableLeft="@drawable/baseline_email_24"
             android:drawablePadding="10dp"
-            android:hint="ENTER A PHONE NUMBER"
+            android:hint="ENTER AN EMAIL"
             android:inputType="text"
             android:maxLength="50"
             android:textColor="#000000" />

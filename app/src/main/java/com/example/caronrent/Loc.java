@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -56,8 +57,6 @@ public class Loc extends AppCompatActivity implements LocationListener {
             }
         });
 
-
-
     }
 
     @SuppressLint("MissingPermission")
@@ -66,6 +65,12 @@ public class Loc extends AppCompatActivity implements LocationListener {
         try {
             locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,5,Loc.this);
+
+            if(textView_location.getText()!=null)
+            {
+                startActivity(new Intent(Loc.this,Home.class));
+                finish();
+            }
 
         }catch (Exception e){
             e.printStackTrace();

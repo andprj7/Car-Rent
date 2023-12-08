@@ -57,4 +57,10 @@ public class Home extends AppCompatActivity {
         });
 
     }
+    @SuppressLint("MissingSuperCall")
+    public void onBackPressed() {
+        finishAffinity();
+        Home.this.finish();
+        //System.exit(0);
+    }
 }

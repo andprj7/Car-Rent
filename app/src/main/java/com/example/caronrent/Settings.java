@@ -101,7 +101,17 @@ public class Settings extends AppCompatActivity {
                 }
             }
         });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Settings.this,Home.class));
+            }
+        });
 
 
+    }
+    @SuppressLint("MissingSuperCall")
+    public void onBackPressed() {
+        startActivity(new Intent(Settings.this,Home.class));
     }
 }

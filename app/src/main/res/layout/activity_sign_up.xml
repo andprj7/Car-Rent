@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@color/main">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,37 +25,41 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="374dp"
-            android:layout_height="71dp"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
             android:textColorHint="#909090"
             app:boxStrokeColor="#4CAF50"
+            android:paddingLeft="20dp"
             app:layout_constraintBottom_toTopOf="@+id/text3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/baseline_person_24"
-                android:drawablePadding="10dp"
+                android:layout_width="360dp"
+                android:layout_height="55dp"
+                android:drawableEnd="@drawable/baseline_person_24"
+                android:drawableTint="@color/main_green"
+                android:drawablePadding="25dp"
+                android:background="@drawable/bg_email_address"
                 android:hint="Enter Name"
                 android:inputType="text"
-                android:textColor="#000000" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text3"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="374dp"
-            android:layout_height="71dp"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
             android:textColorHint="#909090"
             app:boxStrokeColor="#4CAF50"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:paddingLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text1"
             tools:ignore="MissingConstraints"
@@ -63,25 +67,28 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtmobile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/baseline_call_24"
-                android:drawablePadding="10dp"
+                android:layout_width="360dp"
+                android:layout_height="55dp"
+                android:drawableTint="@color/main_green"
+                android:drawableEnd="@drawable/baseline_call_24"
+                android:drawablePadding="25dp"
+                android:background="@drawable/bg_email_address"
                 android:hint="Enter Mobile"
                 android:inputType="number"
                 android:maxLength="10"
-                android:textColor="#000000" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text4"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="374dp"
-            android:layout_height="71dp"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
             android:textColorHint="#909090"
             app:boxStrokeColor="#4CAF50"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
+            android:paddingLeft="20dp"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text3"
             tools:ignore="MissingConstraints"
@@ -89,25 +96,28 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtemail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/baseline_email_24"
-                android:drawablePadding="10dp"
+                android:layout_width="360dp"
+                android:layout_height="55dp"
+                android:drawableEnd="@drawable/baseline_email_24"
+                android:drawablePadding="25dp"
+                android:background="@drawable/bg_email_address"
+                android:drawableTint="@color/main_green"
                 android:hint="Enter E-Mail"
                 android:inputType="textEmailAddress"
                 android:maxLength="50"
-                android:textColor="#000000" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text5"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="374dp"
-            android:layout_height="71dp"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
             android:textColorHint="#909090"
             app:boxStrokeColor="#4CAF50"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:paddingLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text4"
             tools:ignore="MissingConstraints"
@@ -115,25 +125,28 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtpass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/baseline_password_24"
-                android:drawablePadding="10dp"
+                android:layout_width="360dp"
+                android:layout_height="55dp"
+                android:drawableEnd="@drawable/baseline_password_24"
+                android:drawablePadding="25dp"
+                android:drawableTint="@color/main_green"
+                android:background="@drawable/bg_email_address"
                 android:hint="Enter Password"
                 android:inputType="textPassword"
                 android:maxLength="10"
-                android:textColor="#000000" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text6"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="374dp"
-            android:layout_height="71dp"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
             android:textColorHint="#909090"
             app:boxStrokeColor="#4CAF50"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:paddingLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text5"
             tools:ignore="MissingConstraints"
@@ -141,41 +154,46 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtconpass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/baseline_lock_24"
-                android:drawablePadding="10dp"
+                android:layout_width="360dp"
+                android:layout_height="55dp"
+                android:drawableEnd="@drawable/baseline_lock_24"
+                android:drawablePadding="25dp"
+                android:drawableTint="@color/main_green"
+                android:background="@drawable/bg_email_address"
                 android:hint="Enter Confirm Password"
                 android:inputType="textPassword"
                 android:maxLength="10"
-                android:textColor="#000000" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text7"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="374dp"
-            android:layout_height="71dp"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
             android:layout_marginTop="8dp"
             android:textColorHint="#909090"
             app:boxStrokeColor="#4CAF50"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
+            android:paddingLeft="20dp"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text6"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtDl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/baseline_drive_eta_24"
-                android:drawablePadding="10dp"
+                android:layout_width="360dp"
+                android:layout_height="55dp"
+                android:drawableEnd="@drawable/baseline_drive_eta_24"
+                android:drawableTint="@color/main_green"
+                android:background="@drawable/bg_email_address"
+                android:drawablePadding="25dp"
                 android:hint="Enter Driving Licence Number"
                 android:inputType="text"
                 android:maxLength="15"
-                android:textColor="#000000" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -185,7 +203,7 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="Register YourSelf"
-            android:textColor="#000000"
+            android:textColor="@color/main_green"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -199,6 +217,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="16dp"
             android:gravity="center"
+            android:textColor="#909090"
             android:text="Upload Driving Licence Pic"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -225,6 +244,7 @@
             android:layout_marginStart="16dp"
             android:gravity="center"
             android:text="Upload your profile pic"
+            android:textColor="#909090"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/Profilepic"
@@ -260,6 +280,7 @@
             android:gravity="center"
             android:text="Choose Your City"
             android:textSize="16sp"
+            android:textColor="#909090"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/spinner"
             app:layout_constraintStart_toStartOf="@+id/txt"
@@ -279,6 +300,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="31dp"
                 android:text="Male"
+                android:textColor="#909090"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -286,6 +308,7 @@
                 android:id="@+id/rdb_female"
                 android:layout_width="match_parent"
                 android:layout_height="31dp"
+                android:textColor="#909090"
                 android:text="Female"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -296,6 +319,7 @@
                 android:layout_height="31dp"
                 android:text="Other"
                 android:textSize="14sp"
+                android:textColor="#909090"
                 android:textStyle="bold" />
 
         </RadioGroup>
@@ -317,6 +341,7 @@
             android:gravity="center"
             android:text="Gender"
             android:textSize="16sp"
+            android:textColor="#909090"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
             app:layout_constraintStart_toStartOf="@+id/textView3"
